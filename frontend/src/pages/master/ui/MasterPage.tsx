@@ -13,8 +13,7 @@ export interface Request {
   updated_at: string;
 }
 
-// Временно захардкодим ID мастера (потом добавим авторизацию)
-const CURRENT_MASTER_ID = 2;
+
 
 export const MasterPage: React.FC = () => {
   const { user } = useAuth();
