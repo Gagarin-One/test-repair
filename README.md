@@ -18,19 +18,20 @@
 # Запуск проекта
 
 ## Клонируем репозиторий
-git clone https://github.com/Gagarin-One/test-repair.git
-cd test-repair
+- git clone https://github.com/Gagarin-One/test-repair.git
+- cd test-repair
 
 ##Запускаем PostgreSQL и бэкенд
-docker-compose up -d
+- docker-compose up -d
 
 ## Проверяем что всё работает
-curl http://localhost:3001/api/requests
+- curl http://localhost:3001/api/requests
 ## В другом терминале
-Запуск фронтенда отдельно
-cd frontend
-npm install
-npm run dev
+- Запуск фронтенда отдельно
+- cd frontend
+- npm install
+- npm run dev
+- Фронтенд будет доступен по адресу: http://localhost:5173
 
 ### Проверка защиты от гонок
 Скрипт отправляет 10 параллельных запросов на взятие заявки. Ожидаемый результат: 1 успех, 9 конфликтов.
