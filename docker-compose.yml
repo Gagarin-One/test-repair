@@ -41,20 +41,6 @@ services:
     networks:
       - repair_network
 
-  frontend:
-    image: nginx:alpine
-    container_name: repair_frontend
-    restart: unless-stopped
-    ports:
-      - "80:80"
-    volumes:
-      - ./frontend/dist:/usr/share/nginx/html:ro
-      - ./frontend/nginx.conf:/etc/nginx/conf.d/default.conf:ro
-    depends_on:
-      - backend
-    networks:
-      - repair_network
-
 networks:
   repair_network:
     driver: bridge
