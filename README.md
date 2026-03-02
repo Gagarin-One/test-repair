@@ -50,9 +50,9 @@ CREATE DATABASE repair_db OWNER "user";
 
  **Клонируйте репозиторий**
 
-   git clone <url-репозитория>
-   cd repair-requests
-   docker-compose up -d
+   1. git clone <url-репозитория>
+   2. cd repair-requests
+   3. docker-compose up -d
 
    Дождитесь инициализации 
 
