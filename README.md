@@ -15,52 +15,22 @@
 - **База данных**: PostgreSQL
 - **Документация**: DECISIONS.md, PROMPTS.md
 
-## Запуск проекта
+# Запуск проекта
 
-### Способ 1: Локальный запуск
+## Клонируем репозиторий
+git clone https://github.com/Gagarin-One/test-repair.git
+cd test-repair
 
-#### Требования
-- Node.js 18+
-- PostgreSQL 15+
+##Запускаем PostgreSQL и бэкенд
+docker-compose up -d
 
-#### Бэкенд
-bash
-
-cd backend
-npm install
-npm run dev
-
-#### Фронтенд
+## Проверяем что всё работает
+curl http://localhost:3001/api/requests
+## В другом терминале
+Запуск фронтенда отдельно
 cd frontend
 npm install
 npm run dev
-
-### База данных
-#### Создайте базу данных и пользователя
-CREATE USER "user" WITH PASSWORD 'password';
-CREATE DATABASE repair_db OWNER "user";
-#### Запустите миграции (файл database/init.sql)
-
-# Способ 2: Docker Compose
-
-### Требования
-- Docker Desktop (для Mac/Windows) или Docker Engine (для Linux)
-- Docker Compose (входит в состав Docker Desktop)
-### Быстрый старт
-
- **Клонируйте репозиторий**
-
-   1. git clone <url-репозитория>
-   2. cd repair-requests
-   3. docker-compose up -d
-
-   Дождитесь инициализации 
-
-    Откройте приложение
-
-    Фронтенд: http://localhost:5173
-
-    Бэкенд API: http://localhost:3001/api
 
 ### Проверка защиты от гонок
 Скрипт отправляет 10 параллельных запросов на взятие заявки. Ожидаемый результат: 1 успех, 9 конфликтов.
