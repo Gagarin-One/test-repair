@@ -35,14 +35,13 @@ cd frontend
 npm install
 npm run dev
 
-#### База данных
+### База данных
 # Создайте базу данных и пользователя
 CREATE USER "user" WITH PASSWORD 'password';
 CREATE DATABASE repair_db OWNER "user";
 
-# Запустите миграции (файл database/init.sql)
-
-### Способ 2: Docker Compose
+#### Запустите миграции (файл database/init.sql)
+## Способ 2: Docker Compose
 
 ### Требования
 - Docker Desktop (для Mac/Windows) или Docker Engine (для Linux)
@@ -63,15 +62,13 @@ CREATE DATABASE repair_db OWNER "user";
 
     Бэкенд API: http://localhost:3001/api
 
-# Проверка защиты от гонок
+### Проверка защиты от гонок
 Скрипт отправляет 10 параллельных запросов на взятие заявки. Ожидаемый результат: 1 успех, 9 конфликтов.
-
-bash
 ./race_test.sh
 
-# 1. http://localhost:5173/ - страница создания заявки
-# 2. http://localhost:5173/dispatcher - панель диспетчера (войдите как dispatcher1)
-# 3. http://localhost:5173/master - панель мастера (войдите как master1)
+### 1. http://localhost:5173/ - страница создания заявки
+### 2. http://localhost:5173/dispatcher - панель диспетчера (войдите как dispatcher1)
+### 3. http://localhost:5173/master - панель мастера (войдите как master1)
 
 
 # Структура проекта
