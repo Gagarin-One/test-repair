@@ -44,9 +44,11 @@ services:
       - ./backend:/app
       - /app/node_modules
     command: sh -c "npm install && npm run dev"
-
-  frontend:
-    build: ./frontend
+    
+frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev  # явно указываем использовать dev Dockerfile
     container_name: repair_frontend
     restart: unless-stopped
     ports:
@@ -60,7 +62,7 @@ services:
       - /app/node_modules
     environment:
       VITE_API_URL: http://localhost:3001/api
-    command: sh -c "npm install && npm run dev -- --host"
+    # command можно убрать, так как команда уже в Dockerfile
 
 networks:
   repair_network:
