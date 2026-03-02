@@ -5,17 +5,17 @@ WORKDIR /app
 # Копируем package файлы
 COPY package*.json ./
 
-# Устанавливаем ВСЕ зависимости (включая TypeScript)
+# Устанавливаем зависимости
 RUN npm install
 
 # Копируем исходный код
 COPY . .
 
-# Собираем TypeScript
-RUN npm run build
+# Пересобираем (на всякий случай)
+RUN npm rebuild
 
 # Указываем порт
 EXPOSE 3001
 
-# Запускаем приложение
-CMD ["node", "dist/index.js"]
+# Запускаем
+CMD ["npm", "run", "dev"]
