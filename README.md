@@ -36,12 +36,12 @@ npm install
 npm run dev
 
 ### База данных
-# Создайте базу данных и пользователя
+#### Создайте базу данных и пользователя
 CREATE USER "user" WITH PASSWORD 'password';
 CREATE DATABASE repair_db OWNER "user";
-
 #### Запустите миграции (файл database/init.sql)
-## Способ 2: Docker Compose
+
+# Способ 2: Docker Compose
 
 ### Требования
 - Docker Desktop (для Mac/Windows) или Docker Engine (для Linux)
